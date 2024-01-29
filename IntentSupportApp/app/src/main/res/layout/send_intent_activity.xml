@@ -1,0 +1,142 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/mainLayout"
+    android:layout_width="fill_parent"
+    android:layout_height="match_parent"
+    tools:context=".activity.SendIntentActivity">
+
+    <!-- タイトル -->
+    <TextView
+        android:id="@+id/sendIntentTitle"
+        android:layout_width="match_parent"
+        android:layout_height="40dp"
+        android:layout_marginStart="8dp"
+        android:layout_marginTop="16dp"
+        android:text="AppName"
+        app:autoSizeTextType="uniform"
+        android:autoSizeMinTextSize="12sp"
+        android:autoSizeMaxTextSize="100sp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <LinearLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="40dp"
+        android:orientation="vertical"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="@id/sendIntentTitle">
+
+        <TextView
+            android:id="@+id/activityName"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="アクティビティ名："
+            android:textSize="14dp" />
+
+        <!-- 起動アクティビティ選択プルダウン -->
+        <Spinner
+            android:id="@+id/spinnerActivity"
+            android:layout_width="350dp"
+            android:layout_height="wrap_content" />
+
+        <!-- EXTRA_TYPE -->
+        <LinearLayout
+            android:id="@+id/layoutExtraType"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="16dp"
+            android:orientation="horizontal"
+            app:layout_constraintTop_toTopOf="@id/spinnerActivity">
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="EXTRA_TYPE："
+                android:textSize="14dp" />
+
+            <!-- エクストラ型選択プルダウン -->
+            <Spinner
+                android:id="@+id/spinnerExtraType"
+                android:layout_width="200dp"
+                android:layout_height="wrap_content" />
+        </LinearLayout>
+
+        <!-- EXTRA_KEY -->
+        <LinearLayout
+            android:id="@+id/layoutExtraKey"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="8dp"
+            android:orientation="horizontal"
+            app:layout_constraintTop_toTopOf="@id/layoutExtraType">
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="EXTRA_KEY："
+                android:textSize="14dp" />
+
+            <EditText
+                android:id="@+id/editorExtraKey"
+                android:layout_width="200dp"
+                android:layout_height="wrap_content"
+                android:inputType="text"
+                android:textSize="14dp" />
+        </LinearLayout>
+
+        <!-- EXTRA_VALUE -->
+        <LinearLayout
+            android:id="@+id/layoutExtraValue"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="8dp"
+            android:orientation="horizontal"
+            app:layout_constraintTop_toTopOf="@id/layoutExtraKey">
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="EXTRA_VALUE："
+                android:textSize="14dp" />
+
+            <EditText
+                android:id="@+id/editorExtraValue"
+                android:layout_width="200dp"
+                android:layout_height="wrap_content"
+                android:inputType="text"
+                android:textSize="14dp" />
+        </LinearLayout>
+
+        <!-- エクストラ追加ボタン -->
+        <Button
+            android:id="@+id/buttonAddExtra"
+            android:layout_width="150dp"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="8dp"
+            android:text="Extra追加"
+            app:layout_constraintTop_toTopOf="@id/layoutExtraValue" />
+
+        <!-- エクストラ一覧 -->
+        <ListView
+            android:id="@+id/listExtra"
+            android:layout_width="match_parent"
+            android:layout_height="200dp"
+            android:layout_marginTop="16dp"
+            android:background="@drawable/border"
+            app:layout_constraintTop_toTopOf="@id/layoutExtraValue" />
+
+        <!-- Intent起動ボタン -->
+        <Button
+            android:id="@+id/buttonStartIntent"
+            android:layout_width="150dp"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="16dp"
+            android:text="Activity起動"
+            app:layout_constraintTop_toTopOf="@id/listExtra" />
+    </LinearLayout>
+
+</androidx.constraintlayout.widget.ConstraintLayout>
